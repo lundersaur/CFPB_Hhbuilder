@@ -18,6 +18,8 @@ function addFamilyMember() {
   householdMember.textContent = `${relation} ${age} ${smoker}`
 
   document.getElementsByClassName('household')[0].appendChild(householdMember);
+  formElement.reset();
+  addButton.disabled = true;
 }
 
 const formElement = document.getElementsByTagName('form')[0];
