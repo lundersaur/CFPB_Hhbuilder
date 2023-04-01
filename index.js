@@ -10,8 +10,8 @@ addButton.disabled = true;
 addButton.addEventListener("click", addFamilyMember)
 
 function addFamilyMember() {
-  const relation = document.getElementById('rel').value;
-  const age = document.getElementById('age').value;
+  const relation = relationshipInput.value;
+  const age = ageInput.value;
   const smoker = document.getElementById('smoker').checked ? "(smoker)" : "(non-smoker)";
 
   const householdMember = document.createElement('li')
