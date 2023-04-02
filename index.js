@@ -65,5 +65,8 @@ function generateHouseholdJson(event) {
       );
     }
   );
-  document.querySelector('pre.debug').textContent = JSON.stringify(householdCollection);
+
+  const debugElement = document.querySelector('pre.debug');
+  debugElement.textContent = JSON.stringify(householdCollection);
+  debugElement.style.display = "block";
 }
