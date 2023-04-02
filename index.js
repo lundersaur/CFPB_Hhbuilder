@@ -9,6 +9,9 @@ addButton.type = 'button'; // Add type='button' to button to prevent submit and 
 addButton.disabled = true;
 addButton.addEventListener("click", addFamilyMember);
 
+const submitButton = document.querySelector('button[type="submit"]');
+submitButton.addEventListener("click", generateHouseholdJson);
+
 function addFamilyMember() {
   const relation = relationshipInput.value;
   const age = ageInput.value;
@@ -18,7 +21,7 @@ function addFamilyMember() {
   householdMember.textContent = `${relation} ${age} ${smoker}`;
 
   const removeFromListElement = document.createElement('button');
-  removeFromListElement.textContent = "(remove)";
+  removeFromListElement.textContent = " (remove)";
   removeFromListElement.classList.add('remove');
   removeFromListElement.addEventListener("click", function() {
     this.parentElement.remove();
@@ -41,4 +44,26 @@ function validateButtonState() {
   } else {
     addButton.disabled = false;
   }
+}
+
+function generateHouseholdJson(event) {
+  event.preventDefault();
+
+  let householdCollection = [];
+  document.getElementsByTagName("li");
+
+  const nodeList = document.querySelectorAll("li");
+  nodeList.forEach(
+    function(node) {
+      const nodeTextArray = node.textContent.split(' ');
+      householdCollection.push(
+        {
+          "relationship": nodeTextArray[0],
+          "age": nodeTextArray[1],
+          "smoker": nodeTextArray[2] === "(smoker)" ? true : false,
+        }
+      );
+    }
+  );
+  document.querySelector('pre.debug').textContent = JSON.stringify(householdCollection);
 }
