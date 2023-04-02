@@ -1,3 +1,17 @@
+## Development environment
+
+| <!-- -->    | <!-- -->    |
+|-----|--------|
+| OS | Ubuntu 22.04 LTS |
+| Mozilla Firefox | 111.0.1 (64-bit) |
+
+## Setup and run
+1. Clone the project to your local machine.
+
+    ```git clone https://github.com/lundersaur/CFPB_Hhbuilder```
+
+2. You can open the project either by running `open .` in the project directory to open the folder and then double-clicking `index.html`, or you can attempt `open index.html` to attempt to open the file using the system default browser.
+
 # Hhbuilder
 
 Your application needs a way to capture information about a household applying
