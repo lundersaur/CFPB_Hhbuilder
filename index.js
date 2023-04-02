@@ -17,7 +17,14 @@ function addFamilyMember() {
   const householdMember = document.createElement('li');
   householdMember.textContent = `${relation} ${age} ${smoker}`;
 
-  document.getElementsByClassName('household')[0].appendChild(householdMember);
+  const removeFromListElement = document.createElement('button');
+  removeFromListElement.textContent = "(remove)";
+  removeFromListElement.classList.add('remove');
+  removeFromListElement.addEventListener("click", function() {
+    this.parentElement.remove();
+  });
+
+  document.getElementsByClassName('household')[0].appendChild(householdMember).append(removeFromListElement);
   formElement.reset();
   addButton.disabled = true;
 }
