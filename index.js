@@ -4,18 +4,18 @@ ageInput.min = 1;
 
 const relationshipInput = document.getElementById('rel');
 
-const addButton = document.getElementsByClassName('add')[0]
+const addButton = document.getElementsByClassName('add')[0];
 addButton.type = 'button'; // Add type='button' to button to prevent submit and page refresh behavior
 addButton.disabled = true;
-addButton.addEventListener("click", addFamilyMember)
+addButton.addEventListener("click", addFamilyMember);
 
 function addFamilyMember() {
   const relation = relationshipInput.value;
   const age = ageInput.value;
   const smoker = document.getElementById('smoker').checked ? "(smoker)" : "(non-smoker)";
 
-  const householdMember = document.createElement('li')
-  householdMember.textContent = `${relation} ${age} ${smoker}`
+  const householdMember = document.createElement('li');
+  householdMember.textContent = `${relation} ${age} ${smoker}`;
 
   document.getElementsByClassName('household')[0].appendChild(householdMember);
   formElement.reset();
